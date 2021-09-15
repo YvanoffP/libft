@@ -1,5 +1,5 @@
 #ifndef LIBFT
-# define LIBFT
+#define LIBFT
 
 int ft_strlen(char *str);
 void    ft_bzero(void *s, size_t n);
