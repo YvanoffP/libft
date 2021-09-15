@@ -5,5 +5,5 @@ int	main(void)
 {
 	char mot[5] = {'S', 'a', 'l', 'u', 't'};
 
-	printf("%i", ft_strlen(mot));
+	printf("%li", ft_strlen(mot));
 }
