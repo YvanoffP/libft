@@ -1,11 +1,11 @@
-void	*ft_memset(void	*s, int	c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	int	count;
 
 	count = 0;
 	while(count <= n)
 	{
-		s[count] = c;
+		s[count] = '\0';
 		count++;
 	}
 	return(s);
