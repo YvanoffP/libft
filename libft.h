@@ -1,5 +1,8 @@
-#ifndef FTLIB
-# define FTLIB
+#ifndef LIBFT_H
+# define LIBFT_H
+
+#include <stdlib.h>
+#include <unistd.h>
 
 size_t ft_strlen(char *s);
 void    ft_bzero(void *s, size_t n);
