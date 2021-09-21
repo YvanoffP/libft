@@ -2,21 +2,23 @@
 
 size_t	ft_strlcpy(char *dst, char *src, size_t size)
 {
-	unsigned int	count;
-	unsigned int	index;
+	size_t	index;
+	size_t	src_len;
 
-	count = 0;
 	index = 0;
-	while (src[count] != '\0')
-		count++;
-	if (size != 0)
+	if (!dst || !src)
+		return (0);
+	src_len = ft_strlen(src);
+	if (!size)
+		return (src_len);
+	while (src[index] != '\0' && index < size)
 	{
-		while (src[index] != '\0' && index < (size - 1))
-		{
-			dst[index] = src[index];
-			index++;
-		}
+		dst[index] = src[index];
+        index++;
+    }
+    if (size < src_len)
+		dst[size - 1] = '\0';
+    else if (size != 0)
 		dst[index] = '\0';
-	}
-	return (count);
+	return (src_len);
 }
