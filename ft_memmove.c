@@ -23,7 +23,7 @@ void    *ft_memmove(void *dest, const void *src, size_t n)
         while (n != 0)
         {
                 n--;
-                *destcopy++ = srccopy++;
+                *destcopy++ = *srccopy++;
         }
         return (dest);
 }
