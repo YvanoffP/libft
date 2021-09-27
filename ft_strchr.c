@@ -8,6 +8,6 @@ char	*strchr(const char *s, int c)
 	while (s[count] != '\0' && s[count] != (char) c)
 		count++;
 	if (s[count] == (char)c)
-		return (s[count]);
+		return ((char *)(s + count));
 	return (NULL);
 }

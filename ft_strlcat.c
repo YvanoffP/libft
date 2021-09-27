@@ -7,18 +7,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t original_len;
 
 	count = 0;
-	tot_len = ft_strlen(dst) + ft_strlen(src);
+	original_len = size;
+	tot_len = ft_strlen((char *)dst) + ft_strlen((char *)src);
 	while (dst[count] != '\0' && size > 0)
 	{
 		count++;
 		size--;
 	}
 	if (size == 0)
-		return (original_len + ft_strlen(src));
+		return (original_len + ft_strlen((char *)src));
 	while (*src != '\0' && size > 1)
 	{
 		dst[count] = *src;
-		*src++;
+		src++;
 		count++;
 		size--;
 	}

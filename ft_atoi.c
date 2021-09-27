@@ -29,7 +29,8 @@ int	ft_atoi(const char *str)
 		count++;
 	while (str[count] >= '0' && str[count] <= '9')
 	{
-		res = (res * 10) + (str[count] - '0';
+		res = (res * 10) + (str[count] - '0');
 		count++;
 	}
+	return (res * neg);
 }

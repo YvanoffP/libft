@@ -10,7 +10,7 @@ char	*ft_strrchr(const char *s, int c)
 		while (s[pos] != (char)c && pos > 0)
 			pos--;
 		if (s[pos] == (char)c)
-			return (s[pos]);
-		return (NULL);
+			return ((char *) (s + pos));
 	}
+	return (NULL);
 }
