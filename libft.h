@@ -16,6 +16,7 @@ void    *ft_memmove(void *dest, const void *src, size_t n);
 char    *ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
 char    *strnstr(const char *s1, const char *s2, size_t n);
+int     strncmp(const char *s1, const char *s2, size_t n);
 int     isdigit(int c);
 int     isalpha(int c);
 #endif
