@@ -15,7 +15,7 @@
 int		ft_size_wrd(char	*str, char	*charset);
 int		ft_in_str(char	c, char	*base);
 int		ft_wrd_count(char	*str, char	*charset);
-char	**ft_split(char	*str, char	*charset);
+char	**ft_split(char	const *s, char	*c);
 
 int	ft_size_wrd(char	*str, char	*charset)
 {
@@ -58,7 +58,7 @@ int	ft_wrd_count(char	*str, char	*charset)
 	return (nb_words);
 }
 
-char	**ft_split(char	*str, char	*charset)
+char	**ft_split(char const	*s, char	*c)
 {
 	int		i;
 	int		j;
@@ -66,18 +66,18 @@ char	**ft_split(char	*str, char	*charset)
 	char	**tab;
 
 	i = 0;
-	tab = malloc((ft_wrd_count(str, charset) + 2) * sizeof(char *));
-	while (*str)
+	tab = malloc((ft_wrd_count(str, c) + 2) * sizeof(char *));
+	while (*s)
 	{
-		while (*str && ft_in_str(*str, charset) != -1)
-			str++;
+		while (*s && ft_in_str(*s, c) != -1)
+			s++;
 		j = 0;
-		if (ft_size_wrd(str, charset))
+		if (ft_size_wrd(s, c))
 		{
-			wrd = malloc((ft_size_wrd(str, charset) + 1) * sizeof(char));
-			while (*str && ft_in_str(*str, charset) == -1)
+			wrd = malloc((ft_size_wrd(s, c) + 1) * sizeof(char));
+			while (*s && ft_in_str(*s, c) == -1)
 			{
-				wrd[j++] = *(str++);
+				wrd[j++] = *(s++);
 			}
 			wrd[j] = '\0';
 			tab[i++] = wrd;
