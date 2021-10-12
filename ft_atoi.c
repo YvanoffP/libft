@@ -6,13 +6,13 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:24:09 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/11 19:25:33 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/12 22:20:35 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_iswspace(char c)
+static int	ft_iswspace(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\r'
 		|| c == '\f' || c == '\v' || c == ' ')
