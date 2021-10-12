@@ -6,18 +6,18 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 16:40:05 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/07/29 12:29:20 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:08:28 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_size_wrd(char	*str, char	*charset);
-int		ft_in_str(char	c, char	*base);
-int		ft_wrd_count(char	*str, char	*charset);
+int		ft_size_wrd(const char	*str, char	*charset);
+int		ft_in_str(const char	c, char	*base);
+int		ft_wrd_count(const char	*str, char	*charset);
 char	**ft_split(char	const *s, char	*c);
 
-int	ft_size_wrd(char	*str, char	*charset)
+int	ft_size_wrd(const char	*str, char	*charset)
 {
 	int	count;
 
@@ -27,7 +27,7 @@ int	ft_size_wrd(char	*str, char	*charset)
 	return (count);
 }
 
-int	ft_in_str(char	c, char	*base)
+int	ft_in_str(const char	c, char	*base)
 {
 	int	offset;
 
@@ -38,7 +38,7 @@ int	ft_in_str(char	c, char	*base)
 	return (-1);
 }
 
-int	ft_wrd_count(char	*str, char	*charset)
+int	ft_wrd_count(const char	*str, char	*charset)
 {
 	int	size;
 	int	nb_words;
@@ -66,7 +66,7 @@ char	**ft_split(char const	*s, char	*c)
 	char	**tab;
 
 	i = 0;
-	tab = malloc((ft_wrd_count(str, c) + 2) * sizeof(char *));
+	tab = malloc((ft_wrd_count(s, c) + 2) * sizeof(char *));
 	while (*s)
 	{
 		while (*s && ft_in_str(*s, c) != -1)
