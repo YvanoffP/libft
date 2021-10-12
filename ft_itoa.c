@@ -1,18 +1,18 @@
-/* ************************************************************************* */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 12:44:59 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/12 22:06:50 by ypetruzz         ###   ########.fr       */
+/*   Created: 2021/10/12 22:14:41 by ypetruzz          #+#    #+#             */
+/*   Updated: 2021/10/12 22:15:01 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_nbrlen(int nbr, int	*isneg)
+int	ft_nbrlen(int nbr, int *isneg)
 {
 	int	count;
 
@@ -33,10 +33,10 @@ int ft_nbrlen(int nbr, int	*isneg)
 	return (count);
 }
 
-char	*ft_itoa(int	n)
+char	*ft_itoa(int n)
 {
-	int	isneg;
-	int	len;
+	int		isneg;
+	int		len;
 	char	*nb;
 
 	nb = 0;
