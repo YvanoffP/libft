@@ -6,13 +6,13 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 22:14:41 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/12 22:15:01 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/12 22:18:32 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nbrlen(int nbr, int *isneg)
+static int	ft_nbrlen(int nbr, int *isneg)
 {
 	int	count;
 
