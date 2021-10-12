@@ -28,7 +28,7 @@ void    *ft_calloc(size_t count, size_t size);
 int     ft_atoi(const char *str);
 int     ft_isdigit(int c);
 int     ft_isalpha(int c);
-char	**ft_split(char const   *s, char	*c);
+char	**ft_split(char const   *s, char	c);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);

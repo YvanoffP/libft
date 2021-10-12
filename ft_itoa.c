@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 12:44:59 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/12 15:14:51 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:18:44 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ int ft_nbrlen(int *nbr, int	*isneg)
 	int	count;
 
 	count = 0;
-	if (nbr == 0)
+	if (*nbr == 0)
 		return (1);
-	if (nbr < 0)
+	if (*nbr < 0)
 	{
 		*nbr *= -1;
 		count++;
 		*isneg = 1;
 	}
-	while (nbr >= 1)
+	while (*nbr >= 1)
 	{
 		*nbr /= 10;
 		count++;
@@ -45,7 +45,7 @@ char	*ft_itoa(int	n)
 	if (n != 0)
 		nb = malloc(sizeof(char) * (len + 1));
 	else
-		return (nb = ft_strdup("0");
+		return (nb = ft_strdup("0"));
 	nb[len] = '\0';
 	while (--len >= 1)
 	{

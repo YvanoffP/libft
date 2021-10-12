@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 16:40:05 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/12 15:08:28 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:37:37 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_size_wrd(const char	*str, char	*charset);
 int		ft_in_str(const char	c, char	*base);
 int		ft_wrd_count(const char	*str, char	*charset);
-char	**ft_split(char	const *s, char	*c);
+char	**ft_split(char	const *s, char	c);
 
 int	ft_size_wrd(const char	*str, char	*charset)
 {
@@ -58,7 +58,7 @@ int	ft_wrd_count(const char	*str, char	*charset)
 	return (nb_words);
 }
 
-char	**ft_split(char const	*s, char	*c)
+char	**ft_split(char const	*s, char	c)
 {
 	int		i;
 	int		j;
@@ -66,16 +66,16 @@ char	**ft_split(char const	*s, char	*c)
 	char	**tab;
 
 	i = 0;
-	tab = malloc((ft_wrd_count(s, c) + 2) * sizeof(char *));
+	tab = malloc((ft_wrd_count(s, &c) + 1) * sizeof(char *));
 	while (*s)
 	{
-		while (*s && ft_in_str(*s, c) != -1)
+		while (*s && ft_in_str(*s, &c) != -1)
 			s++;
 		j = 0;
-		if (ft_size_wrd(s, c))
+		if (ft_size_wrd(s, &c))
 		{
-			wrd = malloc((ft_size_wrd(s, c) + 1) * sizeof(char));
-			while (*s && ft_in_str(*s, c) == -1)
+			wrd = malloc((ft_size_wrd(s, &c) + 1) * sizeof(char));
+			while (*s && ft_in_str(*s, &c) == -1)
 			{
 				wrd[j++] = *(s++);
 			}
