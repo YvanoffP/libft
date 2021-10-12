@@ -6,11 +6,11 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 16:48:53 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/07/22 02:40:05 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:09:44 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <nistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -23,4 +23,4 @@ void	ft_putstr_fd(char *s, int fd)
 			write(fd, &s[index], 1);
 			index++;
 		}
-}u
+}
