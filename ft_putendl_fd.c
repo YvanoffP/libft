@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 16:48:53 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/12 15:12:11 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:13:29 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_putendl_fd(char *s, int fd)
 
 	index = 0;
 	if (!s)
-		return (NULL);
+		return ;
 	while (s[index] != '\0')
 	{
-		write(fd, s[index], 1);
+		write(fd, &s[index], 1);
 		index++;
 	}
 	write(fd, "\n", 1);
