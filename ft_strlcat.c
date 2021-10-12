@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:26:09 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/11 18:55:48 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/12 18:11:52 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	count = 0;
 	original_len = size;
-	tot_len = ft_strlen((char *)dst) + ft_strlen((char *)src);
+	tot_len = ft_strlen(dst) + ft_strlen(src);
 	while (dst[count] != '\0' && size > 0)
 	{
 		count++;

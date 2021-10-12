@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 16:40:05 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/12 18:09:18 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/12 18:19:19 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static int		ft_size_wrd(const char *str, char *charset);
 static int		ft_wrd_count(const char *str, char *charset);
+int				ft_in_str(char c, const char *base);
 
 static int	ft_size_wrd(const char	*str, char	*charset)
 {
@@ -25,7 +26,18 @@ static int	ft_size_wrd(const char	*str, char	*charset)
 	return (count);
 }
 
-static int	ft_wrd_count(const char	*str, char	*charset)
+int	ft_in_str(char c, const char *base)
+{
+	int	offset;
+
+	offset = 0;
+	while (*(base + offset))
+		if (c == *(base + offset++))
+			return (offset - 1);
+	return (-1);
+}
+
+static int	ft_wrd_count(const char *str, char *charset)
 {
 	int	size;
 	int	nb_words;
