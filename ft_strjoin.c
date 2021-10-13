@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:15:19 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/13 17:18:48 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/13 17:35:28 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
-	result = malloc(sizeof(char) * (len_s1 + len_s2));
+	result = malloc(sizeof(char) * ((len_s1 + len_s2) + 1));
 	if (!result)
 		return (NULL);
-	index = 0;
+	index = -1;
 	count = 0;
-	while (index < len_s1)
-	{
+	while (++index < len_s1)
 		result[index] = s1[index];
-		index++;
-	}
 	while (count < len_s2)
 	{
 		result[index++] = s2[count];
 		count++;
 	}
+	result[index] = '\0';
 	return (result);
 }
