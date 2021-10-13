@@ -6,15 +6,15 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 23:05:02 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/13 23:05:08 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/13 23:09:28 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int    ft_is_in_set(char c, char const set)
+static int    ft_is_in_set(char c, char const *set)
 {
-    while (set)
+    while (*set)
     {
         if (c == *set)
             return (0);
