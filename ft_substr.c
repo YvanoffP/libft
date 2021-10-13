@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:24:00 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/11 20:24:26 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/13 16:59:29 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
+	if ((size_t)start > ft_strlen(s))
+		return (ft_strdup(""));
 	res = malloc(sizeof(char) * len);
 	if (!res)
 		return (NULL);
@@ -29,5 +31,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start++;
 		count++;
 	}
+	res[count] = '\0';
 	return (res);
 }

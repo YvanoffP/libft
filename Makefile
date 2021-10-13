@@ -22,6 +22,7 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
+				@echo "Your Libft is done!"
 
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
