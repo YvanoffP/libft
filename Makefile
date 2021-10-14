@@ -8,11 +8,11 @@ SRCS			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			=
+BONUS			=	ft_lstnew.c
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 
-CC				= gcc
+CC				= gcc $(CFLAGS)
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 
@@ -20,8 +20,8 @@ NAME			= libft.a
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+$(NAME):		$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 				@echo "Your Libft is done!"
 
 clean:
