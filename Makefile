@@ -22,9 +22,12 @@ NAME			= libft.a
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
 				@echo "Your Libft is done!"
+
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
