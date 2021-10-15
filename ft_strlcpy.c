@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:58:45 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/13 19:21:20 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/15 02:45:50 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	src_len;
 
 	index = 0;
-	if (!dst || !src)
-		return (0);
 	src_len = ft_strlen(src);
 	if (!size)
 		return (src_len);

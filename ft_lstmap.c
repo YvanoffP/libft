@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 21:52:41 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/14 22:15:17 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/15 03:19:35 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*ret;
 	t_list	*new_cont;
 
-	if (!lst || !(del))
+	if (!lst)
 		return (NULL);
 	ret = 0;
 	while (lst)
