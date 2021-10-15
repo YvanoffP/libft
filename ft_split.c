@@ -6,16 +6,25 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 16:40:05 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/15 01:39:41 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/15 02:22:35 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_size_wrd(const char *str, char charset);
+struct s_init
+{
+	int		i;
+	int		j;
+	int		count;
+	char	*wrd;
+	char	**tab;
+}		t_init;
+
+static int		ft_sz_w(const char *str, char charset);
 static int		ft_wrd_count(const char *str, char charset);
 
-static int	ft_size_wrd(const char *str, char charset)
+static int	ft_sz_w(const char *str, char charset)
 {
 	int	count;
 
@@ -39,7 +48,7 @@ static int	ft_wrd_count(const char *str, char charset)
 	{
 		while (*(str + count) && *(str + count) == charset)
 			count++;
-		size = ft_size_wrd(str + count, charset);
+		size = ft_sz_w(str + count, charset);
 		if (size)
 		{
 			nb_words++;
@@ -51,29 +60,29 @@ static int	ft_wrd_count(const char *str, char charset)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		count;
-	char	*wrd;
-	char	**tab;
+	struct s_init	vars;
 
-	i = 0;
-	count = 0;
-	tab = malloc((ft_wrd_count(s, c) + 1) * sizeof(char *));
-	while (*(s + count))
+	vars.i = 0;
+	vars.count = 0;
+	vars.tab = malloc((ft_wrd_count(s, c) + 1) * sizeof(char *));
+	if (!vars.tab)
+		return (NULL);
+	while (*(s + vars.count))
 	{
-		while (*(s + count) && *(s + count) == c)
-			count++;
-		j = 0;
-		if (ft_size_wrd(s + count, c))
+		while (*(s + vars.count) && *(s + vars.count) == c)
+			vars.count++;
+		vars.j = 0;
+		if (ft_sz_w(s + vars.count, c))
 		{
-			wrd = malloc((ft_size_wrd(s + count, c) + 1) * sizeof(char));
-			while (*(s + count) && *(s + count) != c)
-				wrd[j++] = *(s + count++);
-			wrd[j] = '\0';
-			tab[i++] = wrd;
+			vars.wrd = malloc((ft_sz_w(s + vars.count, c) + 1) * sizeof(char));
+			if (!vars.wrd)
+				return (NULL);
+			while (*(s + vars.count) && *(s + vars.count) != c)
+				vars.wrd[vars.j++] = *(s + vars.count++);
+			vars.wrd[vars.j] = '\0';
+			vars.tab[vars.i++] = vars.wrd;
 		}
 	}
-	tab[i] = (void *)0;
-	return (tab);
+	vars.tab[vars.i] = (void *)0;
+	return (vars.tab);
 }
