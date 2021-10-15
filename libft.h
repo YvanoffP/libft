@@ -17,11 +17,21 @@
 # include <unistd.h>
 # include <stdio.h>
 
-typedef struct s_list
+typedef struct  s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+}				t_list;
+
+typedef struct  s_init
+{
+    int     i;
+    int     j;
+    int     count;
+    char    *wrd;
+    char    **tab;
+}               t_init;
+
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);

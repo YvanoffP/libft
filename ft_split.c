@@ -6,20 +6,11 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 16:40:05 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/15 16:41:13 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/15 17:21:56 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-struct s_init
-{
-	int		i;
-	int		j;
-	int		count;
-	char	*wrd;
-	char	**tab;
-}		t_init;
 
 static int		ft_sz_w(const char *str, char charset);
 static int		ft_wrd_count(const char *str, char charset);
@@ -60,7 +51,7 @@ static int	ft_wrd_count(const char *str, char charset)
 
 char	**ft_split(char const *s, char c)
 {
-	struct s_init	vars;
+	t_init	vars;
 
 	vars.i = 0;
 	vars.count = 0;
