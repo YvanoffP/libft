@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 16:40:05 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/15 17:21:56 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/15 17:41:13 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char	**ft_split(char const *s, char c)
 
 	vars.i = 0;
 	vars.count = 0;
+	if (!s)
+		return (NULL);
 	vars.tab = malloc((ft_wrd_count(s, c) + 1) * sizeof(char *));
 	if (!vars.tab)
 		return (NULL);
@@ -62,15 +64,12 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*(s + vars.count) && *(s + vars.count) == c)
 			vars.count++;
-		vars.j = 0;
 		if (ft_sz_w(s + vars.count, c))
 		{
-			vars.wrd = malloc((ft_sz_w(s + vars.count, c) + 1) * sizeof(char));
+			vars.wrd = ft_substr(s, vars.count, ft_sz_w(s + vars.count, c));
 			if (!vars.wrd)
 				return (NULL);
-			while (*(s + vars.count) && *(s + vars.count) != c)
-				vars.wrd[vars.j++] = *(s + vars.count++);
-			vars.wrd[vars.j] = '\0';
+			vars.count += ft_sz_w(s + vars.count, c);
 			vars.tab[vars.i++] = vars.wrd;
 		}
 	}
