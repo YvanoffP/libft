@@ -6,7 +6,7 @@
 /*   By: ypetruzz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:11:10 by ypetruzz          #+#    #+#             */
-/*   Updated: 2021/10/16 19:26:29 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2021/10/23 18:05:13 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	pos;
+	int		count;
 
-	pos = ft_strlen(s);
-	if (s[0] == '\0')
-		return (ft_strdup(""));
-	if (pos > 0)
+	count = ft_strlen(s);
+	if (count >= 0)
 	{
-		while (s[pos] != (char)c && pos > 0)
-			pos--;
-		if (s[pos] == (char)c)
-			return ((char *)(s + pos));
+		while (s[count] != (char)c && count > 0)
+			count--;
+		if (s[count] == (char)c)
+			return ((char *)(s + count));
 	}
 	return (NULL);
 }
